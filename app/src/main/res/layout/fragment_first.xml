@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".FirstFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- 最高血圧 -->
+        <TextView
+            android:id="@+id/label_max"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="最高血圧 (mmHg)"
+            android:textSize="16sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/edit_max"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="例: 120"
+            android:inputType="number"
+            android:maxLines="1"
+            app:layout_constraintTop_toBottomOf="@id/label_max"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- 最低血圧 -->
+        <TextView
+            android:id="@+id/label_min"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="最低血圧 (mmHg)"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/edit_max"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/edit_min"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="例: 80"
+            android:inputType="number"
+            android:maxLines="1"
+            app:layout_constraintTop_toBottomOf="@id/label_min"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- 脈拍 -->
+        <TextView
+            android:id="@+id/label_pulse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="脈拍 (bpm)"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/edit_min"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/edit_pulse"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="例: 65"
+            android:inputType="number"
+            android:maxLines="1"
+            app:layout_constraintTop_toBottomOf="@id/label_pulse"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- 身長 -->
+        <TextView
+            android:id="@+id/label_height"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="身長 (cm)"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/edit_pulse"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/edit_height_cm"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="例: 170"
+            android:inputType="number"
+            android:maxLines="1"
+            app:layout_constraintTop_toBottomOf="@id/label_height"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- 体重 -->
+        <TextView
+            android:id="@+id/label_weight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="体重 (kg)"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/edit_height_cm"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/edit_weight_kg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="例: 62.5"
+            android:inputType="numberDecimal"
+            android:maxLines="1"
+            app:layout_constraintTop_toBottomOf="@id/label_weight"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- BMI -->
+        <TextView
+            android:id="@+id/text_bmi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="BMI: -"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/edit_weight_kg"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <!-- 最新表示（残す） -->
+        <TextView
+            android:id="@+id/textview_first"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="まだデータなし"
+            app:layout_constraintTop_toBottomOf="@id/text_bmi"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- 保存ボタン -->
+        <Button
+            android:id="@+id/button_first"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="保存"
+            app:layout_constraintTop_toBottomOf="@id/textview_first"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
